@@ -1,0 +1,16 @@
+<ion-view view-title="Home">
+  <ion-content class="center" >
+
+    <div class="col">
+      <h1>Reflex Tester</h1>
+      <button type="button" class="button button-block button-positive" ng-click="beginTest()" ng-hide="testing || waitTime">Click anywhere to begin</button>
+      <button type="button" class="button button-block button-positive" ng-show="testing">Testing</button>
+      <!--The fatal flaw of this code is that it works after click down and click up- a full click. Thats not the right way to test reflexes.-->
+      <button type="button" class="button button-block button-error" ng-click="endTest()" ng-show="waitTime">Hit it!</button>
+
+      <p>Your last time was:</p>
+      <p data-ng-bind="'0.' + lastTime"></p>
+    </div>
+
+  </ion-content>
+</ion-view>
